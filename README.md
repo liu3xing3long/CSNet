@@ -2,7 +2,11 @@
 
 This repo is the official implementation of [CS-Net: Channel and Spatial Attention Network for Curvilinear Structure Segmentation](https://link.springer.com/chapter/10.1007/978-3-030-32239-7_80).
 
-![Network architecture](https://tva1.sinaimg.cn/large/006y8mN6ly1g82eztkb0wj31e40u0axe.jpg)
+<center>
+  <img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g82eztkb0wj31e40u0axe.jpg" height="60%" width="60%"
+</center>
+
+
 
 The main contribution of this work is the publication of two scarce datasets in the medical image field.  Plesae click the link below to access the details and source data.
 
@@ -12,15 +16,27 @@ The main contribution of this work is the publication of two scarce datasets in 
 
 #### Vessel Segmentation on Fundus
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g82f22kgj6j315t0lv1f7.jpg)
+<center>
+  <img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g82f22kgj6j315t0lv1f7.jpg" height="65%" width="65%"/>
+</center>
+
+
 
 #### Vessel Segmentation on OCT-A images
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g82f2qvdw5j31ew0brke8.jpg)
+<center>
+  <img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g82f2qvdw5j31ew0brke8.jpg" height="65%" width="65%" />
+</center>
+
+
 
 #### Nerve fibre tracing on CCM
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g82f39bqm7j31g70lxqnb.jpg)
+<center>
+  <img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g82f39bqm7j31g70lxqnb.jpg" height="65%" width="65%"/>
+</center>
+
+
 
 ## Note:
 
