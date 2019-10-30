@@ -40,6 +40,15 @@ The main contribution of this work is the publication of two scarce datasets in 
 
 ## Note:
 
+**Requirements**:
+
+- PyTorch >= 0.4.1
+
+- tqdm
+- cv2
+- visdom
+- sklearn
+
 The attention module was implemented based on [DANet](https://github.com/junfu1115/DANet). The difference between the proposed module and the original block is that  we added a new $1\times 3$ and $3 \times 1$ kernel convolution layer into spatial attention module. Plese refer to the paper for details.
 
 **Welcome Any Problems of This Project**
