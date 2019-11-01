@@ -6,6 +6,7 @@ from PIL import ImageOps, Image
 from sklearn.metrics import confusion_matrix
 
 
+# using manual threshold during training, but OTSU threshold in off line test
 def threshold(image):
     image[image >= 100] = 255
     image[image < 100] = 0
@@ -37,46 +38,6 @@ def metrics(pred, label, batch_size):
         SEn += sen
     return Acc, SEn
 
-
-def metrics3dmse(pred, label, batch_size):
-    outputs = (pred.data.cpu().numpy() * 255).astype(np.uint8)
-    labels = (label.data.cpu().numpy() * 255).astype(np.uint8)
-    outputs = outputs.squeeze(1)  # for MSELoss()
-    labels = labels.squeeze(1)  # for MSELoss()
-    outputs = threshold(outputs)  # for MSELoss()
-
-    tp, fn, fp, IoU = 0, 0, 0, 0
-    for i in range(batch_size):
-        img = outputs[i, :, :, :]
-        gt = labels[i, :, :, :]
-        tpr, fnr, fpr, iou = metrics_3d(img, gt)
-        # dcr = Dice(img, gt)
-        tp += tpr
-        fn += fnr
-        fp += fpr
-        IoU += iou
-    return tp, fn, fp, IoU
-
-
-def metrics3d(pred, label, batch_size):
-    pred = torch.argmax(pred, dim=1)  # for CE loss series
-    outputs = (pred.data.cpu().numpy() * 255).astype(np.uint8)
-    labels = (label.data.cpu().numpy() * 255).astype(np.uint8)
-    # outputs = outputs.squeeze(1)  # for MSELoss()
-    # labels = labels.squeeze(1)  # for MSELoss()
-    # outputs = threshold(outputs)  # for MSELoss()
-
-    tp, fn, fp, IoU = 0, 0, 0, 0
-    for i in range(batch_size):
-        img = outputs[i, :, :, :]
-        gt = labels[i, :, :, :]
-        tpr, fnr, fpr, iou = metrics_3d(img, gt)
-        # dcr = Dice(img, gt)
-        tp += tpr
-        fn += fnr
-        fp += fpr
-        IoU += iou
-    return tp, fn, fp, IoU
 
 
 def get_acc(image, label):

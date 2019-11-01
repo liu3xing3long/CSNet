@@ -34,7 +34,7 @@ def AUC(path):
         label_name = base_name[:-9] + '.png'
         label_path = os.path.join(path, 'label', label_name)
 
-        mask_path = '/home/leila/PycharmProjects/CSNet/assets/STARE(3)/mask.png'
+        mask_path = '/path/to/FOV/mask/'
 
         pred_image = cv2.imread(file, flags=-1)
         label = cv2.imread(label_path, flags=-1)
@@ -93,7 +93,7 @@ def AccSenSpe(path):
         label_name = base_name[:-14] + '.png'
         label_path = os.path.join(path, 'label', label_name)
 
-        mask_path = '/home/leila/PycharmProjects/CSNet/assets/STARE(3)/mask.png'
+        mask_path = '/path/to/FOV/mask/'
 
         pred = cv2.imread(file, flags=-1)
         label = cv2.imread(label_path, flags=-1)
@@ -135,6 +135,7 @@ def FDR(path):
 
 
 if __name__ == '__main__':
+    # predicted root path
     path = './assets/Padova1/'
     # auc = AUC(path)
     acc, var_acc, sen, var_sen, spe, var_spe = AccSenSpe(path)
